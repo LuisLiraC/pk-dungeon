@@ -53,7 +53,7 @@ class Character {
   isOverDoor(map, game) {
     if (map[this.y][this.x] == 1) {
       this.key == true
-        ? game.finish()
+        ? game.finish('¡Congrats, you win!')
         : game.setMessage('You need to find the key')
     }
   }

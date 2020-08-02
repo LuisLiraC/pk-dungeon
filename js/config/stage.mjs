@@ -11,6 +11,13 @@ const map = [
   [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0]
 ]
 
+const traps = [
+  { x: 4, y: 10 },
+  { x: 2, y: 3 },
+  { x: 7, y: 1 },
+  { x: 7, y: 6 }
+]
+
 const canvas = document.getElementById('canvas')
 
 const wall = new Image()
@@ -30,6 +37,7 @@ const size = 50
 export const stageConfig = {
   map,
   canvas,
+  traps,
   images: {
     wall,
     door,

@@ -12,9 +12,13 @@ class Game {
       this.characterMovement(event)
     })
     this.setMessage('Find the key')
+
     setInterval(() => {
       this.initialize()
+      this.verifyPosition()
     }, 1000 / this.fps)
+
+    setInterval(() => this.stage.toggleTraps(), 300)
   }
 
   initialize() {
@@ -55,12 +59,18 @@ class Game {
     this.setMessage('Find the key')
   }
 
-  finish() {
+  finish(message) {
     this.finished = true
-    this.setMessage('¡Congrats, you win!')
+    this.setMessage(message)
     setTimeout(() => {
       this.resetGame()
-    }, 2000)
+    }, 1500)
+  }
+
+  verifyPosition() {
+    if (this.stage.map[this.character.y][this.character.x] == 0 && this.stage.blocked) {
+      this.finish('¡You lose!')
+    }
   }
 }
 

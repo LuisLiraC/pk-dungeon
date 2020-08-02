@@ -5,6 +5,8 @@ class Stage {
     this.canvas = config.canvas
     this.tileWidth = config.tile.width
     this.tileHeight = config.tile.height
+    this.traps = config.traps
+    this.blocked = false
   }
 
   setContext() {
@@ -54,8 +56,18 @@ class Stage {
   }
 
   resetCanvas() {
-    this.canvas.width = 750
-    this.canvas.height = 500
+    this.canvas.width = this.canvas.width
+    this.canvas.height = this.canvas.height
+  }
+
+  toggleTraps() {
+    if (this.blocked) {
+      this.blocked = false
+      this.traps.forEach(coord => this.map[coord.x][coord.y] = 2)
+    } else {
+      this.blocked = true
+      this.traps.forEach(coord => this.map[coord.x][coord.y] = 0)
+    }
   }
 }
 
