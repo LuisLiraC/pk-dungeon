@@ -43,7 +43,7 @@ class Character {
   }
 
   isOverKey(map, game) {
-    if(map[this.y][this.x] == 3) {
+    if (map[this.y][this.x] == 3) {
       this.key = true
       map[this.y][this.x] = 2
       game.setMessage('Go to the door')
@@ -51,8 +51,10 @@ class Character {
   }
 
   isOverDoor(map, game) {
-    if(map[this.y][this.x] == 1 && this.key == true) {
-      game.finish()
+    if (map[this.y][this.x] == 1) {
+      this.key == true
+        ? game.finish()
+        : game.setMessage('You need to find the key')
     }
   }
 }

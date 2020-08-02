@@ -54,7 +54,7 @@ class Game {
     this.finished = false
     this.setMessage('Find the key')
   }
-  
+
   finish() {
     this.finished = true
     this.setMessage('¡Congrats, you win!')

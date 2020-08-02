@@ -14,8 +14,8 @@ class Stage {
   drawStage() {
     this.setContext()
     let imageToDraw
-    for (let i = 0; i < 10; i++) {
-      for (let j = 0; j < 15; j++) {
+    for (let i = 0; i < this.map.length; i++) {
+      for (let j = 0; j < this.map[0].length; j++) {
 
         switch (this.map[i][j]) {
           case 0:
@@ -32,13 +32,25 @@ class Stage {
             break
         }
 
-        this.ctx.drawImage(imageToDraw, j * this.tileWidth, i * this.tileHeight, this.tileWidth, this.tileHeight)
+        this.ctx.drawImage(
+          imageToDraw,
+          j * this.tileWidth,
+          i * this.tileHeight,
+          this.tileWidth,
+          this.tileHeight
+        )
       }
     }
   }
 
   drawCharacter(character) {
-    this.ctx.drawImage(character.image, character.x * this.tileWidth, character.y * this.tileHeight, this.tileWidth, this.tileHeight)
+    this.ctx.drawImage(
+      character.image,
+      character.x * this.tileWidth,
+      character.y * this.tileHeight,
+      this.tileWidth,
+      this.tileHeight
+    )
   }
 
   resetCanvas() {

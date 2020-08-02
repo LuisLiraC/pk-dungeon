@@ -13,30 +13,32 @@ const map = [
 
 const canvas = document.getElementById('canvas')
 
-const wallImage = new Image()
-wallImage.src = '../assets/wall.png'
+const wall = new Image()
+wall.src = '../assets/wall.png'
 
-const doorImage = new Image()
-doorImage.src = '../assets/door.png'
+const door = new Image()
+door.src = '../assets/door.png'
 
-const grassImage = new Image()
-grassImage.src = '../assets/grass.png'
+const grass = new Image()
+grass.src = '../assets/grass.png'
 
-const keyImage = new Image()
-keyImage.src = '../assets/key.png'
+const key = new Image()
+key.src = '../assets/key.png'
+
+const size = 50
 
 export const stageConfig = {
   map,
   canvas,
   images: {
-    wall: wallImage,
-    door: doorImage,
-    grass: grassImage,
-    key: keyImage,
+    wall,
+    door,
+    grass,
+    key
   },
   tile: {
-    width: 50,
-    height: 50
+    width: size,
+    height: size
   }
 }
 
