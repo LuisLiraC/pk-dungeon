@@ -6,7 +6,7 @@ class Stage {
     this.tileWidth = config.tile.width
     this.tileHeight = config.tile.height
     this.traps = config.traps
-    this.blocked = false
+    this.activatedTraps = false
   }
 
   setContext() {
@@ -32,6 +32,8 @@ class Stage {
           case 3:
             imageToDraw = this.images.key
             break
+          case 4:
+            imageToDraw = this.images.trap
         }
 
         this.ctx.drawImage(
@@ -61,12 +63,12 @@ class Stage {
   }
 
   toggleTraps() {
-    if (this.blocked) {
-      this.blocked = false
+    if (this.activatedTraps) {
+      this.activatedTraps = false
       this.traps.forEach(coord => this.map[coord.x][coord.y] = 2)
     } else {
-      this.blocked = true
-      this.traps.forEach(coord => this.map[coord.x][coord.y] = 0)
+      this.activatedTraps = true
+      this.traps.forEach(coord => this.map[coord.x][coord.y] = 4)
     }
   }
 }

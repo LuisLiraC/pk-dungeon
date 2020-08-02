@@ -68,7 +68,7 @@ class Game {
   }
 
   verifyPosition() {
-    if (this.stage.map[this.character.y][this.character.x] == 0 && this.stage.blocked) {
+    if (this.stage.map[this.character.y][this.character.x] == 4 && this.stage.activatedTraps) {
       this.finish('¡You lose!')
     }
   }

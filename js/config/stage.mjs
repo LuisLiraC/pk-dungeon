@@ -32,6 +32,9 @@ grass.src = '../assets/grass.png'
 const key = new Image()
 key.src = '../assets/key.png'
 
+const trap = new Image()
+trap.src = '../assets/trap.png'
+
 const size = 50
 
 export const stageConfig = {
@@ -42,7 +45,8 @@ export const stageConfig = {
     wall,
     door,
     grass,
-    key
+    key,
+    trap
   },
   tile: {
     width: size,
