@@ -40,6 +40,11 @@ class Stage {
   drawCharacter(character) {
     this.ctx.drawImage(character.image, character.x * this.tileWidth, character.y * this.tileHeight, this.tileWidth, this.tileHeight)
   }
+
+  resetCanvas() {
+    this.canvas.width = 750
+    this.canvas.height = 500
+  }
 }
 
 export default Stage

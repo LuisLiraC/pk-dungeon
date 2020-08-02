@@ -18,14 +18,9 @@ class Game {
   }
 
   initialize() {
-    this.resetCanvas()
+    this.stage.resetCanvas()
     this.stage.drawStage()
     this.stage.drawCharacter(this.character)
-  }
-
-  resetCanvas() {
-    this.stage.canvas.width = 750
-    this.stage.canvas.height = 500
   }
 
   characterMovement(event) {
@@ -56,6 +51,7 @@ class Game {
     this.character.y = 1
     this.character.key = false
     this.stage.map[8][3] = 3
+    this.finished = false
     this.setMessage('Find the key')
   }
   
